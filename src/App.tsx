@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, Mail, Terminal, Code2, Brain, ExternalLink, ChevronRight, Book, Award } from 'lucide-react';
 
+
 function App() {
   const [activeProject, setActiveProject] = useState<number | null>(null);
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
@@ -106,7 +107,7 @@ function App() {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="group">
                 <img
-                  src="IMG_1689 2.png"
+                  src="/img.png"
                   alt="Developer workspace"
                   className="rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300"
                 />
