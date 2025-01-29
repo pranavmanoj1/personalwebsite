@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, Terminal, Code2, Brain, ExternalLink, ChevronRight, Book, Award } from 'lucide-react';
+import { Github, Linkedin, Mail, Terminal, Code2, Brain, ExternalLink, ChevronRight, Book, Award, Pencil } from 'lucide-react';
 
 
 function App() {
@@ -31,6 +31,16 @@ function App() {
       link2: 'https://github.com/pranavmanoj1/Detoxify'
     },
     
+    {
+      icon: <Pencil className="mb-4 text-blue-400" />,
+      title: 'Document Generator',
+      description: 'A web application that integrates with Google Docs to automate form-based document generation, including invoices.',
+      longDescription: 'Uses parameters in google docs to generate documents based on user input. Built with React, Node.js, and Google Docs API',
+      technologies: [ 'API', 'Authentication', 'Node.js','Vite'],
+      link: 'https://www.youtube.com/watch?v=EG157ZjIgRk',
+      link2: 'https://github.com/pranavmanoj1/RESUME_GENERATOR'
+    }
+    
   ];
 
   const education = [
@@ -55,7 +65,7 @@ function App() {
           <div className="flex justify-between items-center">
 
             <div className="space-x-6">
-              {['about', 'experience', 'education', 'projects', 'contact'].map((section) => (
+              {['about', 'education', 'projects', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -201,7 +211,7 @@ function App() {
                   <div className="flex justify-between items-center">
                     <div className="flex space-x-2">
                       {project.technologies.map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-gray-700 rounded-full text-sm">
+                        <span key={tech} className="px-3 py-1 bg-gray-700 rounded-full text-sm min-w-[80px] text-center">
                           {tech}
                         </span>
                       ))}
