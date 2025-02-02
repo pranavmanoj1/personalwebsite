@@ -5,6 +5,7 @@ Gambling websites have evolved into sophisticated platforms that combine compell
 
 The Allure of Plinko: A Physics-Based Simulation
 ------------------------------------------------
+![Alt Text](https://media.tenor.com/klkckiLg6e4AAAAM/plinko-stake.gif)
 
 At first glance, Plinko is an enticing game where a ball is dropped from the top of a peg-filled board, bouncing randomly before landing in a multiplier slot. The premise seems physics-based—each bounce appears dictated by real-world mechanics. However, a closer inspection reveals that no actual physics calculations run on the server. Instead, the entire game is predestined before the ball even appears on the screen.
 
