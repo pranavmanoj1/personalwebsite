@@ -2,12 +2,14 @@ import React, { useState,useEffect } from 'react';
 import { Github, Linkedin, Mail, Terminal, Code2, Brain, ExternalLink, ChevronRight, Book, Award, Pencil } from 'lucide-react';
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
+import ArticleModal from './ArticleModal';
 
 
 function App() {
   const [activeProject, setActiveProject] = useState<number | null>(null);
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   const [articles, setArticles] = useState<{ title: string; content: string }[]>([]);
+  const [selectedArticle, setSelectedArticle] = useState<{ title: string; content: string } | null>(null);
 
   const skills = {
     'Backend Development': {
@@ -172,31 +174,37 @@ function App() {
         </div>
       </section>
 
+      
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       {/* Articles Section */}
-<section id="articles" className="py-20">
-  <div className="container mx-auto px-4">
-    <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-12 text-white">Articles</h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        {articles.map((article, index) => (
-          <div key={index} className="bg-gray-700 p-6 rounded-lg shadow-md">
-            <ReactMarkdown className="prose text-gray-200 prose-headings:text-white prose-strong:text-white prose-p:text-gray-300" remarkPlugins={[remarkGfm]}>
-              {article.content.substring(0, 500)}
-            </ReactMarkdown>
-            <a
-              href={`/articles/${article.title}.md`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-300 hover:text-blue-200 transition-colors flex items-center mt-4"
-            >
-              Read More <ExternalLink size={16} className="ml-2" />
-            </a>
+      <section id="articles" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-white">Articles</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {articles.map((article, index) => (
+                <div key={index} className="bg-gray-700 p-6 rounded-lg shadow-md">
+
+                  <ReactMarkdown  className="prose text-gray-200 prose-headings:text-white prose-strong:text-white prose-p:text-gray-300" remarkPlugins={[remarkGfm]}>
+                    {article.content ? article.content.substring(0, 500) : ''} 
+                  </ReactMarkdown>
+
+                  <button
+                    onClick={() => setSelectedArticle(article)}
+                    className="text-blue-300 hover:text-blue-200 transition-colors flex items-center mt-4"
+                  >
+                    Read More <ExternalLink size={16} className="ml-2" />
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
+      
+      {/* Modal for Full Article */}
+      {selectedArticle && <ArticleModal article={selectedArticle} onClose={() => setSelectedArticle(null)} />}
     </div>
-  </div>
-</section>
 
       
 
@@ -303,4 +311,3 @@ function App() {
 }
 
 export default App;
-
