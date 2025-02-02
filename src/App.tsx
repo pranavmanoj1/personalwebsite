@@ -86,7 +86,7 @@ function App() {
           <div className="flex justify-between items-center">
 
             <div className="space-x-6">
-              {['about', 'education','articles', 'projects', 'contact'].map((section) => (
+              {['about','articles', 'education', 'projects', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
