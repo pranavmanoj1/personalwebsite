@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     const loadArticles = async () => {
-      const articleFiles = ["article1.md","article2.md"
+      const articleFiles = ["article1.md","article2.md",'article3.md'
       ]; // List markdown files here
       const loadedArticles = await Promise.all(
         articleFiles.map(async (file) => {
@@ -61,7 +61,17 @@ function App() {
       technologies: [ 'API', 'Authentication', 'Node.js','Vite'],
       link: 'https://www.youtube.com/watch?v=EG157ZjIgRk',
       link2: 'https://github.com/pranavmanoj1/RESUME_GENERATOR'
-    }
+    },
+    {
+      icon: <Pencil className="mb-4 text-blue-400" />,
+      title: 'Rice University Ecommerce Website',
+      description: 'A web application that allows users to buy, sell, view, comment, and add to wishlist',
+      longDescription: 'wrote python scripts in django backend to put,post, retrive data from sql database',
+      technologies: [ 'API', 'python', 'backend','django'],
+      link: 'https://www.youtube.com/watch?v=81FmaMKQR6s',
+      link2: 'https://github.com/pranavmanoj1/ecommerce'
+    },
+    
     
   ];
 

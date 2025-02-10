@@ -9,7 +9,7 @@ function ArticleList() {
 
   useEffect(() => {
     const loadArticles = async () => {
-      const articleFiles = ["article1.md", "article2.md"]; // List markdown files here
+      const articleFiles = ["article1.md", "article2.md",'article3.md']; // List markdown files here
       const loadedArticles = await Promise.all(
         articleFiles.map(async (file) => {
           const response = await fetch(`/articles/${file}`);
